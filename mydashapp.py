@@ -17,7 +17,6 @@ import json
 import dash_table
 import dash_bootstrap_components as dbc
 
- 
 # =============================================================================
 # LOAD AND WRANGLE DATASETS
 # =============================================================================
@@ -34,8 +33,6 @@ crime_main['MONTH'] = pd.Categorical(crime_main['MONTH'],
 crime_main['GEOID10'] = crime_main['GEOID10'].fillna(0.0).apply(np.int64).astype('category')
 geometry = [Point(xy) for xy in zip(crime_main['X'], crime_main['Y'])]
 crime_main_geo = gpd.GeoDataFrame(crime_main, crs={'init': 'epsg: 4326'}, geometry=geometry)
-
-print(crime_main_geo.columns)
 
 social = gpd.read_file("Data/3aeae140-8174-4d77-8c0e-de3ef0ce4b672020330-1-1rr22uq.veze.shp")
 boston_polygon = social[['FID', 'GEOID10', 'Name', 'geometry']]
