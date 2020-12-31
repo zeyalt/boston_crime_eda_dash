@@ -13,3 +13,4 @@ shapely==1.7.1
 #json==
 dash_table==4.11.1
 dash_bootstrap_components==0.11.1
+gunicorn==20.0.4
